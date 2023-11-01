@@ -71,4 +71,6 @@ print(message)  # Output: Hello, Alice!
 library(dslabs)
 
 data("na_example")
+
+force(na_example)
 ```
