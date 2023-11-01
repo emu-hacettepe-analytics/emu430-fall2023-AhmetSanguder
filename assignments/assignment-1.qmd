@@ -4,8 +4,7 @@ title: "Assignment 1"
 
 # Assignment 1
 
-```{r}
-1 + 1
+```{}
 ```
 
 My first assignment has two parts.
@@ -14,10 +13,52 @@ My first assignment has two parts.
 
 ## (b)
 
-## 1)**Syntax for Control Structures**:
+**1) Indentation and Code Blocks**:
 
-The syntax for control structures like loops and conditional statements differs between R and Python. For instance, Python typically uses indentation to denote code blocks, while R uses curly braces.
+In Python, indentation is used to define code blocks. The indentation level determines the grouping of code. In R, code blocks are defined using curly braces **`{}`** without relying on indentation to define the structure.
+
+```{Python:}
+  if 5 > 2:
+    print("Five is greater than two")
+    print("Python uses indentation for code blocks")
+R:
+  if (5 > 2) {
+    print("Five is greater than two")
+    print("R uses curly braces for code blocks")
+}
+```
 
 **2)Indexing (0-based vs. 1-based)**:
 
 In Python, indexing starts from 0, meaning the first element of an array or list is accessed using index 0. In R, indexing starts from 1, so the first element is accessed using index 1.
+
+```{python:}
+  list = [1, 2, 3, 4, 5]
+print(my_list[0])
+
+R:
+    v <- c(1, 2, 3, 4, )
+print(my_vector[1])
+
+```
+
+Both of the above codes return the value 1
+
+**3)Concatenating Strings**:
+
+In Python, strings are concatenated using the + operator. In R, strings are concatenated using the paste or paste() functions.
+
+```{python:}
+  
+greeting <- "Hello"
+name <- "Alice"
+message <- paste(greeting, ", ", name, "!", sep = "")
+print(message)  # Output: Hello, Alice!
+
+R:
+
+greeting <- "Hello"
+name <- "Alice"
+message <- paste(greeting, ", ", name, "!", sep = "")
+print(message)  # Output: Hello, Alice!
+```

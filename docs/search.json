@@ -46,7 +46,7 @@
     "href": "assignments/assignment-1.html",
     "title": "Assignment 1",
     "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts."
+    "text": "My first assignment has two parts.\n\n\n\n\n\n1) Indentation and Code Blocks:\nIn Python, indentation is used to define code blocks. The indentation level determines the grouping of code. In R, code blocks are defined using curly braces {} without relying on indentation to define the structure.\n  if 5 &gt; 2:\n    print(\"Five is greater than two\")\n    print(\"Python uses indentation for code blocks\")\nR:\n  if (5 &gt; 2) {\n    print(\"Five is greater than two\")\n    print(\"R uses curly braces for code blocks\")\n}\n2)Indexing (0-based vs. 1-based):\nIn Python, indexing starts from 0, meaning the first element of an array or list is accessed using index 0. In R, indexing starts from 1, so the first element is accessed using index 1.\n  list = [1, 2, 3, 4, 5]\nprint(my_list[0])\n\nR:\n    v &lt;- c(1, 2, 3, 4, )\nprint(my_vector[1])\n\nBoth of the above codes return the value 1\n3)Concatenating Strings:\nIn Python, strings are concatenated using the + operator. In R, strings are concatenated using the paste or paste() functions.\n  \ngreeting &lt;- \"Hello\"\nname &lt;- \"Alice\"\nmessage &lt;- paste(greeting, \", \", name, \"!\", sep = \"\")\nprint(message)  # Output: Hello, Alice!\n\nR:\n\ngreeting &lt;- \"Hello\"\nname &lt;- \"Alice\"\nmessage &lt;- paste(greeting, \", \", name, \"!\", sep = \"\")\nprint(message)  # Output: Hello, Alice!"
   },
   {
     "objectID": "assignments.html",
@@ -61,5 +61,19 @@
     "title": "My Blog",
     "section": "",
     "text": "This page is under construction.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "assignments/assignment-1.html#syntax-for-control-structures",
+    "href": "assignments/assignment-1.html#syntax-for-control-structures",
+    "title": "Assignment 1",
+    "section": "",
+    "text": "The syntax for control structures like loops and conditional statements differs between R and Python. For instance, Python typically uses indentation to denote code blocks, while R uses curly braces.\n2)Indexing (0-based vs. 1-based):\nIn Python, indexing starts from 0, meaning the first element of an array or list is accessed using index 0. In R, indexing starts from 1, so the first element is accessed using index 1."
+  },
+  {
+    "objectID": "assignments/assignment-1.html#b",
+    "href": "assignments/assignment-1.html#b",
+    "title": "Assignment 1",
+    "section": "",
+    "text": "1) Indentation and Code Blocks:\nIn Python, indentation is used to define code blocks. The indentation level determines the grouping of code. In R, code blocks are defined using curly braces {} without relying on indentation to define the structure.\n  if 5 &gt; 2:\n    print(\"Five is greater than two\")\n    print(\"Python uses indentation for code blocks\")\nR:\n  if (5 &gt; 2) {\n    print(\"Five is greater than two\")\n    print(\"R uses curly braces for code blocks\")\n}\n2)Indexing (0-based vs. 1-based):\nIn Python, indexing starts from 0, meaning the first element of an array or list is accessed using index 0. In R, indexing starts from 1, so the first element is accessed using index 1.\n  list = [1, 2, 3, 4, 5]\nprint(my_list[0])\n\nR:\n    v &lt;- c(1, 2, 3, 4, )\nprint(my_vector[1])\n\nBoth of the above codes return the value 1\n3)Concatenating Strings:\nIn Python, strings are concatenated using the + operator. In R, strings are concatenated using the paste or paste() functions.\n  \ngreeting &lt;- \"Hello\"\nname &lt;- \"Alice\"\nmessage &lt;- paste(greeting, \", \", name, \"!\", sep = \"\")\nprint(message)  # Output: Hello, Alice!\n\nR:\n\ngreeting &lt;- \"Hello\"\nname &lt;- \"Alice\"\nmessage &lt;- paste(greeting, \", \", name, \"!\", sep = \"\")\nprint(message)  # Output: Hello, Alice!"
   }
 ]
