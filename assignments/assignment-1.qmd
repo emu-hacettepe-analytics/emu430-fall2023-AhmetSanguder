@@ -11,6 +11,8 @@ My first assignment has two parts.
 
 ## (a)
 
+I watched the Model Migration: from Excel to R video by Johnny Breen. In the video, he explains that one day his boss gave him the task of transferring data from Excel to R and he tells about his experiences while doing this task. He says that many companies maintain a large number of legacy models in the Excel platform, and with the advent of data analytics, these companies are looking for ways to migrate their existing models from the Excel environment to the R environment. He shares his experiences about the difficulties that future analysts may encounter in this model transition process and gives 3 main recommendations. These are: 1) Don't copy Excel :) 2)Structure your model 3) Keep things simple.
+
 ## (b)
 
 **1) Indentation and Code Blocks**:
@@ -61,4 +63,12 @@ greeting <- "Hello"
 name <- "Alice"
 message <- paste(greeting, ", ", name, "!", sep = "")
 print(message)  # Output: Hello, Alice!
+```
+
+## **(c)**
+
+```{r}
+library(dslabs)
+
+data("na_example")
 ```
