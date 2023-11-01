@@ -6,20 +6,13 @@ sidebar: false
 # Education
 
 -   B.S., Industrial Engineering, Hacettepe University, Turkey, 2021 - ongoing.
+-   Computer Programming, Ege University, Turkey, 2019 - 2021.
 
 # Work Experience
 
 ## Employements
 
-1.  Firm xxx, position xx, year xxx
-
-2.  Firm yyy, position yyy, year yyy
-
 ## Internships
-
-1.  Firm aaa, position xx, year xxx
-
-2.  Firm bbb, position yyy, year yyy
 
 # Projects
 
@@ -28,3 +21,5 @@ sidebar: false
 R, Quarto, Git, Python
 
 # Hobbies
+
+Playing and watching football, playing basketball, swimming, going to the gym, watching documentaries, playing TFT, reading psychology books, listening to podcasts, playing 101 and backgammon
