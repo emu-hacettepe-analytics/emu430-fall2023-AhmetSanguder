@@ -5,8 +5,8 @@ sidebar: false
 
 # Education
 
--   B.S., Industrial Engineering, Hacettepe University, Turkey, 2021 - ongoing.
 -   Computer Programming, Ege University, Turkey, 2019 - 2021.
+-   B.S., Industrial Engineering, Hacettepe University, Turkey, 2021 - ongoing.
 
 # Work Experience
 
