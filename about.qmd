@@ -18,7 +18,7 @@ sidebar: false
 
 # Competencies
 
-R, Quarto, Git, Python
+R, Quarto, Git, Python, SQL, HTML, JavaScript, VB, Pascal, Delphi
 
 # Hobbies
 
