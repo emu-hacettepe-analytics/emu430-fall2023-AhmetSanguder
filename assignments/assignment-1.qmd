@@ -12,7 +12,7 @@ My first assignment has two parts.
 
 ## (a)
 
-## (b) 
+## (b)
 
 ## 1)**Syntax for Control Structures**:
 
