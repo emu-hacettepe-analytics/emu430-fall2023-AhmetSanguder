@@ -2,11 +2,6 @@
 title: "Assignment 1"
 ---
 
-# Assignment 1
-
-```{}
-```
-
 My first assignment has two parts.
 
 ## (a)
@@ -19,30 +14,17 @@ I watched the Model Migration: from Excel to R video by Johnny Breen. In the vid
 
 In Python, indentation is used to define code blocks. The indentation level determines the grouping of code. In R, code blocks are defined using curly braces **`{}`** without relying on indentation to define the structure.
 
-```{Python:}
-  if 5 > 2:
-    print("Five is greater than two")
-    print("Python uses indentation for code blocks")
-R:
-  if (5 > 2) {
-    print("Five is greater than two")
-    print("R uses curly braces for code blocks")
-}
-```
+`{Python:}   if 5 > 2:     print("Five is greater than two")     print("Python uses indentation for code blocks") R:   if (5 > 2) {     print("Five is greater than two")     print("R uses curly braces for code blocks") }`
 
 **2)Indexing (0-based vs. 1-based)**:
 
 In Python, indexing starts from 0, meaning the first element of an array or list is accessed using index 0. In R, indexing starts from 1, so the first element is accessed using index 1.
 
-```{python:}
-  list = [1, 2, 3, 4, 5]
-print(my_list[0])
+\`\`\`{python:} list = \[1, 2, 3, 4, 5\] print(my_list\[0\])
 
-R:
-    v <- c(1, 2, 3, 4, )
-print(my_vector[1])
+R: v \<- c(1, 2, 3, 4, ) print(my_vector\[1\])
 
-```
+```         
 
 Both of the above codes return the value 1
 
@@ -69,8 +51,12 @@ print(message)  # Output: Hello, Alice!
 
 ```{r}
 library(dslabs)
-
 data("na_example")
-
-force(na_example)
+print(na_example)
+number_of_na <- sum(is.na(na_example))
+print(number_of_na)
+new_na_example <- na_example
+na_example[is.na(na_example)] <- 0
+print(na_example)
+print(sum(is.na(na_example)))
 ```
