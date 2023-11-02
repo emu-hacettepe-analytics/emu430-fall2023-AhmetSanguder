@@ -10,42 +10,46 @@ I watched the Model Migration: from Excel to R video by Johnny Breen. In the vid
 
 ## (b)
 
-**1) Indentation and Code Blocks**:
+**1)** Code blocks are created by aligning in Python. In R, curly brackets are used.
 
-In Python, indentation is used to define code blocks. The indentation level determines the grouping of code. In R, code blocks are defined using curly braces **`{}`** without relying on indentation to define the structure.
-
-`{Python:}   if 5 > 2:     print("Five is greater than two")     print("Python uses indentation for code blocks") R:   if (5 > 2) {     print("Five is greater than two")     print("R uses curly braces for code blocks") }`
-
-**2)Indexing (0-based vs. 1-based)**:
-
-In Python, indexing starts from 0, meaning the first element of an array or list is accessed using index 0. In R, indexing starts from 1, so the first element is accessed using index 1.
-
-\`\`\`{python:} list = \[1, 2, 3, 4, 5\] print(my_list\[0\])
-
-R: v \<- c(1, 2, 3, 4, ) print(my_vector\[1\])
-
-```         
-
-Both of the above codes return the value 1
-
-**3)Concatenating Strings**:
-
-In Python, strings are concatenated using the + operator. In R, strings are concatenated using the paste or paste() functions.
-
-```{python:}
-  
-greeting <- "Hello"
-name <- "Alice"
-message <- paste(greeting, ", ", name, "!", sep = "")
-print(message)  # Output: Hello, Alice!
-
-R:
-
-greeting <- "Hello"
-name <- "Alice"
-message <- paste(greeting, ", ", name, "!", sep = "")
-print(message)  # Output: Hello, Alice!
+```{r}
+#y = 3
+#if y > 5:
+#    print("y value is greater than 5.")
+#else:
+#    print("The y value is less than or equal to 5.")
 ```
+
+```{r}
+#y <- 3
+#if (y > 5) {
+#  print("y value is greater than 5.")
+#} else {
+#  print("The y value is less than or equal to 5.")
+#}
+```
+
+**2)** In Python, the first element of a list is index \[0\]. In R, the first element is index \[1\].
+
+```{r}
+#l = ['a', 'b', 'c', 'd', 'e']
+#print(l[0])
+```
+
+```{r}
+#v <- c('a', 'b', 'c', 'd', 'e')
+#print(v[1])
+```
+
+both codes above return a
+
+**3)** R is used more extensively in statistics and data analytics than Python. Because R includes data frames, statistical models and packages. Examples of these statistical models and packages:
+
+Statistical Models: Linear Regression, Logistic Regression, Decision Trees, Random Forests, Support Vector Machines
+
+Packages: dplyr, ggplot2, tidyr, caret, stats
+
+(AI)
 
 ## **(c)**
 
