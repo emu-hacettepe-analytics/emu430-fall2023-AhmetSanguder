@@ -22,4 +22,4 @@ R, Quarto, Git, Python, SQL, HTML, JavaScript, VB, Pascal, Delphi
 
 # Hobbies
 
-Playing and watching football, playing basketball, swimming, going to the gym, watching documentaries, playing TFT, reading psychology books, listening to podcasts, playing 101 and backgammon
+Playing and watching football, playing basketball, swimming, going to the gym, watching documentaries, reading psychology books, listening to podcasts
