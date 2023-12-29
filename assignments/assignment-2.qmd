@@ -18,6 +18,7 @@ library(tidyverse)
 library(rvest)
 library(stringr)
 library(knitr)
+library(ggplot2)
 
 
 convert_time <- function(time_str) {
@@ -178,12 +179,13 @@ ggplot(movie_data, aes(x = Year, y = Rating, fill = factor(Year))) +
   )
 ```
 
-```{r}
+```{}
+```
 
+```{}
 ```
 
 ```{r}
-
 ```
 
 ## (d)
