@@ -14,12 +14,32 @@ library(rvest)
 library(stringr)
 library(knitr)
 
+convert_time <- function(time_str) {
+  hours <- 0
+  minutes <- 0
+  
+  if (grepl("h", time_str)) {
+    time_components <- strsplit(time_str, "h|m")[[1]]
+    if (length(time_components) >= 1) {
+      hours <- as.numeric(time_components[1])
+    }
+    if (length(time_components) >= 2) {
+      minutes <- as.numeric(time_components[2])
+    }
+  } else {
+    minutes <- as.numeric(gsub("m", "", time_str))
+  }
+  
+  total_minutes <- hours * 60 + minutes
+  return(total_minutes)
+}
+
 data_html <- read_html(url[1])
 title_names_1 <- data_html |> html_nodes('.ipc-title__text')
-title_names_1 <- html_text(title_names)
-title_names_1 <- tail(head(title_names,-1),-1)
-title_names_1 <- str_split(title_names, " ", n=2)
-title_names_1 <- unlist(lapply(title_names, function(x) {x[2]}))
+title_names_1 <- html_text(title_names_1)
+title_names_1 <- tail(head(title_names_1,-1),-1)
+title_names_1 <- str_split(title_names_1, " ", n=2)
+title_names_1 <- unlist(lapply(title_names_1, function(x) {x[2]}))
 
 year_1 <- data_html |> html_nodes(".dli-title-metadata-item:nth-child(1)")
 year_1 <- as.numeric(html_text(year_1))
@@ -51,8 +71,8 @@ duration_2 <- html_text(duration_2)
 duration_2 <- unlist(lapply(duration_2, convert_time))
 
 rating_2 <- data_html |> html_nodes(".ratingGroup--imdb-rating")
-rating_2 <- html_text(rating2)
-rating_2 <- as.numeric(str_extract(rating2, "\\d+\\.\\d+"))
+rating_2 <- html_text(rating_2)
+rating_2 <- as.numeric(str_extract(rating_2, "\\d+\\.\\d+"))
 
 votes_2 <- data_html |> html_nodes(".kRnqtn")
 votes_2 <- html_text(votes_2)
