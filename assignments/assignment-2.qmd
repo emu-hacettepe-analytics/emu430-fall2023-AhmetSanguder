@@ -119,6 +119,8 @@ kable(
 )
 ```
 
+I watched all 5 movies on this list. Of course, there would be movies whose order I would change if I were to make them, but I am happy with this list (especially the first 2 rows).
+
 ```{r}
 kable(
   movies %>%
@@ -128,12 +130,14 @@ kable(
 )
 ```
 
+I respect the opinions of the voters and have not watched any of the movies on this list. :)
+
 ## (b)
 
 ```{r}
 kable(
   movie_data %>%
-    filter(Title == "Ölümlü Dünya" | Title == "Yedinci Kogustaki Mucize" | Title == "Dag II"),
+    filter(Title == "CM101MMXI Fundamentals" | Title == "Hababam Sinifi" | Title == "Masumiyet"),
   caption = "My Best Three",
   col.names = c("Title", "Year", "Duration", "Rating", "Votes")
 )
