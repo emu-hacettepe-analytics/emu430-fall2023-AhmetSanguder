@@ -13,6 +13,7 @@ url <- c("https://m.imdb.com/search/title/?title_type=feature&release_date=2010-
 ## (2)
 
 ```{r}
+
 library(tidyverse)
 library(rvest)
 library(stringr)
