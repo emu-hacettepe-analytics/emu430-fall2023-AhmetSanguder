@@ -166,7 +166,7 @@ ggplot(movie_data, aes(x = factor(Year))) +
 ```{r}
 movie_data$Year <- as.factor(movie_data$Year)
 ggplot(movie_data, aes(x = Year, y = Rating, fill = factor(Year))) +
-  geom_boxplot(color = "black",width = 0.5) +
+  geom_boxplot(width = 0.5) +
   labs(x = "Year", y = "Rating") +
   ggtitle("Box Plots of Movie Ratings Over the Years") +
   theme(legend.position = "none",
