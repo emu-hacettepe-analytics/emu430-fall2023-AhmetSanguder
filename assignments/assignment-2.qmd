@@ -4,9 +4,13 @@ title: "Assignment 2"
 
 # Assignment 2
 
+## (a)
+
 ```{r}
 url <- c("https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&sort=user_rating,desc&num_votes=2500,&country_of_origin=TR&count=250","https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&sort=user_rating,desc&num_votes=2500,&country_of_origin=TR&count=250")
 ```
+
+## (b)
 
 ```{r}
 library(tidyverse)
@@ -95,6 +99,8 @@ movie_data <- data.frame(
   Votes = Votes
 )
 ```
+
+## (c)
 
 ```{r}
 
