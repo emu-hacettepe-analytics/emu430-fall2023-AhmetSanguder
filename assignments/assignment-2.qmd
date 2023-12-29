@@ -5,7 +5,7 @@ title: "Assignment 2"
 # Assignment 2
 
 ```{r}
-url <- c("https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&sort=user_rating,desc&num_votes=2500,&country_of_origin=TR&count=250" , "https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&sort=user_rating,desc&num_votes=2500,&country_of_origin=TR&count=250")
+url <- c("https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&sort=user_rating,desc&num_votes=2500,&country_of_origin=TR&count=250","https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&sort=user_rating,desc&num_votes=2500,&country_of_origin=TR&count=250")
 ```
 
 ```{r}
@@ -13,4 +13,66 @@ library(tidyverse)
 library(rvest)
 library(stringr)
 library(knitr)
+
+data_html <- read_html(url[1])
+title_names_1 <- data_html |> html_nodes('.ipc-title__text')
+title_names_1 <- html_text(title_names)
+title_names_1 <- tail(head(title_names,-1),-1)
+title_names_1 <- str_split(title_names, " ", n=2)
+title_names_1 <- unlist(lapply(title_names, function(x) {x[2]}))
+
+year_1 <- data_html |> html_nodes(".dli-title-metadata-item:nth-child(1)")
+year_1 <- as.numeric(html_text(year_1))
+
+duration_1 <- data_html |> html_nodes((".dli-title-metadata-item:nth-child(2)"))
+duration_1 <- html_text(duration_1)
+duration_1 <- unlist(lapply(duration_1, convert_time))
+
+rating_1 <- data_html |> html_nodes(".ratingGroup--imdb-rating")
+rating_1 <- html_text(rating_1)
+rating_1 <- as.numeric(str_extract(rating_1, "\\d+\\.\\d+"))
+
+votes_1 <- data_html |> html_nodes(".kRnqtn")
+votes_1 <- html_text(votes_1)
+votes_1 <- as.numeric(gsub("\\D", "", votes_1))
+
+data_html <- read_html(url[2])
+title_names_2 <- data_html |> html_nodes('.ipc-title__text')
+title_names_2 <- html_text(title_names_2)
+title_names_2 <- tail(head(title_names_2,-1),-1)
+title_names_2 <- str_split(title_names_2, " ", n=2)
+title_names_2 <- unlist(lapply(title_names_2, function(x) {x[2]}))
+
+year_2 <- data_html |> html_nodes(".dli-title-metadata-item:nth-child(1)")
+year2 <- as.numeric(html_text(year_2))
+
+duration_2 <- data_html |> html_nodes((".dli-title-metadata-item:nth-child(2)"))
+duration_2 <- html_text(duration_2)
+duration_2 <- unlist(lapply(duration_2, convert_time))
+
+rating_2 <- data_html |> html_nodes(".ratingGroup--imdb-rating")
+rating_2 <- html_text(rating2)
+rating_2 <- as.numeric(str_extract(rating2, "\\d+\\.\\d+"))
+
+votes_2 <- data_html |> html_nodes(".kRnqtn")
+votes_2 <- html_text(votes_2)
+votes_2 <- as.numeric(gsub("\\D", "", votes_2))
+
+Title <- c(title_names_1,title_names_2)
+Year <- c(year_1,year_2)
+Duration <- c(duration_1,duration_2)
+Rating <- c(rating_1,rating_2)
+Votes <- c(votes_1,votes_2)
+
+movie_data <- data.frame(
+  Title = Title,
+  Year = Year,
+  Duration = Duration,
+  Rating = Rating,
+  Votes = Votes
+)
+```
+
+```{r}
+
 ```
