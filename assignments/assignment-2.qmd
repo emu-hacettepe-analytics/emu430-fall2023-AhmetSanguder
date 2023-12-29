@@ -14,6 +14,7 @@ library(rvest)
 library(stringr)
 library(knitr)
 
+
 convert_time <- function(time_str) {
   hours <- 0
   minutes <- 0
@@ -33,6 +34,7 @@ convert_time <- function(time_str) {
   total_minutes <- hours * 60 + minutes
   return(total_minutes)
 }
+#PART URL1
 
 data_html <- read_html(url[1])
 title_names_1 <- data_html |> html_nodes('.ipc-title__text')
@@ -56,6 +58,7 @@ votes_1 <- data_html |> html_nodes(".kRnqtn")
 votes_1 <- html_text(votes_1)
 votes_1 <- as.numeric(gsub("\\D", "", votes_1))
 
+
 data_html <- read_html(url[2])
 title_names_2 <- data_html |> html_nodes('.ipc-title__text')
 title_names_2 <- html_text(title_names_2)
@@ -64,7 +67,7 @@ title_names_2 <- str_split(title_names_2, " ", n=2)
 title_names_2 <- unlist(lapply(title_names_2, function(x) {x[2]}))
 
 year_2 <- data_html |> html_nodes(".dli-title-metadata-item:nth-child(1)")
-year2 <- as.numeric(html_text(year_2))
+year_2 <- as.numeric(html_text(year_2))
 
 duration_2 <- data_html |> html_nodes((".dli-title-metadata-item:nth-child(2)"))
 duration_2 <- html_text(duration_2)
