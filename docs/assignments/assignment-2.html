@@ -206,9 +206,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#assignment-2" id="toc-assignment-2" class="nav-link active" data-scroll-target="#assignment-2">Assignment 2</a>
   <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">(1)</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">(2)</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">(3)</a></li>
   <li><a href="#a" id="toc-a" class="nav-link" data-scroll-target="#a">(a)</a></li>
   <li><a href="#b" id="toc-b" class="nav-link" data-scroll-target="#b">(b)</a></li>
   <li><a href="#c" id="toc-c" class="nav-link" data-scroll-target="#c">(c)</a></li>
+  <li><a href="#d" id="toc-d" class="nav-link" data-scroll-target="#d">(d)</a></li>
+  <li><a href="#e" id="toc-e" class="nav-link" data-scroll-target="#e">(e)</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">(4)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -239,14 +245,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="assignment-2" class="level1">
 <h1>Assignment 2</h1>
-<section id="a" class="level2">
-<h2 class="anchored" data-anchor-id="a">(a)</h2>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">(1)</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://m.imdb.com/search/title/?title_type=feature&amp;release_date=2010-01-01,2023-12-31&amp;sort=user_rating,desc&amp;num_votes=2500,&amp;country_of_origin=TR&amp;count=250"</span>,<span class="st">"https://m.imdb.com/search/title/?title_type=feature&amp;release_date=,2009-12-31&amp;sort=user_rating,desc&amp;num_votes=2500,&amp;country_of_origin=TR&amp;count=250"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="b" class="level2">
-<h2 class="anchored" data-anchor-id="b">(b)</h2>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">(2)</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -373,8 +379,535 @@ The following object is masked from 'package:readr':
 <span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2">(3)</h2>
+</section>
+<section id="a" class="level2">
+<h2 class="anchored" data-anchor-id="a">(a)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>movies <span class="ot">&lt;-</span> movie_data <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Rating))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  movies <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">5</span>),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Top 5 Movies"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Title"</span>, <span class="st">"Year"</span>, <span class="st">"Duration"</span>, <span class="st">"Rating"</span>, <span class="st">"Votes"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Top 5 Movies</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Title</th>
+<th style="text-align: right;">Year</th>
+<th style="text-align: right;">Duration</th>
+<th style="text-align: right;">Rating</th>
+<th style="text-align: right;">Votes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Hababam Sinifi</td>
+<td style="text-align: right;">1975</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">9.2</td>
+<td style="text-align: right;">42512</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CM101MMXI Fundamentals</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">139</td>
+<td style="text-align: right;">9.1</td>
+<td style="text-align: right;">46996</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tosun Pasa</td>
+<td style="text-align: right;">1976</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: right;">24329</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hababam Sinifi Sinifta Kaldi</td>
+<td style="text-align: right;">1975</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: right;">24369</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Süt Kardesler</td>
+<td style="text-align: right;">1976</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: right;">20889</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  movies <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tail</span>(<span class="dv">5</span>),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Bottom 5 Movies"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Title"</span>, <span class="st">"Year"</span>, <span class="st">"Duration"</span>, <span class="st">"Rating"</span>, <span class="st">"Votes"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Bottom 5 Movies</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: right;">Year</th>
+<th style="text-align: right;">Duration</th>
+<th style="text-align: right;">Rating</th>
+<th style="text-align: right;">Votes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">466</td>
+<td style="text-align: left;">Cumali Ceber 2</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">10230</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">467</td>
+<td style="text-align: left;">Müjde</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">9919</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">468</td>
+<td style="text-align: left;">15/07 Safak Vakti</td>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">20608</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">469</td>
+<td style="text-align: left;">Cumali Ceber: Allah Seni Alsin</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">39269</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">470</td>
+<td style="text-align: left;">Reis</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">73974</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="b" class="level2">
+<h2 class="anchored" data-anchor-id="b">(b)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  movie_data <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Title <span class="sc">==</span> <span class="st">"Ölümlü Dünya"</span> <span class="sc">|</span> Title <span class="sc">==</span> <span class="st">"Yedinci Kogustaki Mucize"</span> <span class="sc">|</span> Title <span class="sc">==</span> <span class="st">"Dag II"</span>),</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"My Best Three"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Title"</span>, <span class="st">"Year"</span>, <span class="st">"Duration"</span>, <span class="st">"Rating"</span>, <span class="st">"Votes"</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>My Best Three</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Title</th>
+<th style="text-align: right;">Year</th>
+<th style="text-align: right;">Duration</th>
+<th style="text-align: right;">Rating</th>
+<th style="text-align: right;">Votes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Yedinci Kogustaki Mucize</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">132</td>
+<td style="text-align: right;">8.2</td>
+<td style="text-align: right;">54171</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dag II</td>
+<td style="text-align: right;">2016</td>
+<td style="text-align: right;">135</td>
+<td style="text-align: right;">8.2</td>
+<td style="text-align: right;">109869</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ölümlü Dünya</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">107</td>
+<td style="text-align: right;">7.6</td>
+<td style="text-align: right;">30270</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
 <section id="c" class="level2">
 <h2 class="anchored" data-anchor-id="c">(c)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>movie_data <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year) <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">yearly_average =</span> <span class="fu">mean</span>(Rating)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> yearly_average)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Yearly Rating Averages"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment-2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(movie_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(Year))) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"blue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Number of Movies"</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Number of Movies Over the Years"</span>) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment-2_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>movie_data<span class="sc">$</span>Year <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(movie_data<span class="sc">$</span>Year)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(movie_data, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Rating, <span class="at">fill =</span> <span class="fu">factor</span>(Year))) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">"black"</span>,<span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Rating"</span>) <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Box Plots of Movie Ratings Over the Years"</span>) <span class="sc">+</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assignment-2_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="d" class="level2">
+<h2 class="anchored" data-anchor-id="d">(d)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>corr <span class="ot">&lt;-</span> <span class="fu">cor</span>(movie_data<span class="sc">$</span>Votes, movie_data<span class="sc">$</span>Rating)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Correlation between Votes and Ratings:"</span>, corr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Correlation between Votes and Ratings: 0.130875</code></pre>
+</div>
+</div>
+</section>
+<section id="e" class="level2">
+<h2 class="anchored" data-anchor-id="e">(e)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>corr <span class="ot">&lt;-</span> <span class="fu">cor</span>(movie_data<span class="sc">$</span>Duration, movie_data<span class="sc">$</span>Rating)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Correlation between Votes and Ratings:"</span>, corr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Correlation between Votes and Ratings: 0.03356006</code></pre>
+</div>
+</div>
+</section>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3">(4)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>movie_data1 <span class="ot">=</span> movie_data</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://m.imdb.com/search/title/?title_type=feature&amp;sort=release_date,asc&amp;num_votes=2500,&amp;groups=top_1000&amp;country_of_origin=TR&amp;count=250"</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>data_html <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>title_names <span class="ot">&lt;-</span> data_html <span class="sc">|&gt;</span> <span class="fu">html_nodes</span>(<span class="st">'.ipc-title__text'</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>title_names <span class="ot">&lt;-</span> <span class="fu">html_text</span>(title_names)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>title_names <span class="ot">&lt;-</span> <span class="fu">tail</span>(<span class="fu">head</span>(title_names,<span class="sc">-</span><span class="dv">1</span>),<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>title_names <span class="ot">&lt;-</span> <span class="fu">str_split</span>(title_names, <span class="st">" "</span>, <span class="at">n=</span><span class="dv">2</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>title_names <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">lapply</span>(title_names, <span class="cf">function</span>(x) {x[<span class="dv">2</span>]}))</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> data_html <span class="sc">|&gt;</span> <span class="fu">html_nodes</span>(<span class="st">".dli-title-metadata-item:nth-child(1)"</span>)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">html_text</span>(year))</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>top_movies <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">Title =</span> title_names,</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">Year =</span> year</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span> (</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  top_movies,</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Turkish Movies in the Top 1000"</span>,</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Turkish Movies in the Top 1000</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Title</th>
+<th style="text-align: right;">Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Eskiya</td>
+<td style="text-align: right;">1996</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Her Sey Çok Güzel Olacak</td>
+<td style="text-align: right;">1998</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Vizontele</td>
+<td style="text-align: right;">2001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G.O.R.A.</td>
+<td style="text-align: right;">2004</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Babam ve Oglum</td>
+<td style="text-align: right;">2005</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nefes: Vatan Sagolsun</td>
+<td style="text-align: right;">2009</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bir Zamanlar Anadolu’da</td>
+<td style="text-align: right;">2011</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kis Uykusu</td>
+<td style="text-align: right;">2014</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ayla: The Daughter of War</td>
+<td style="text-align: right;">2017</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ahlat Agaci</td>
+<td style="text-align: right;">2018</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Yedinci Kogustaki Mucize</td>
+<td style="text-align: right;">2019</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>movie_data <span class="ot">&lt;-</span> movie_data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Year =</span> <span class="fu">as.numeric</span>(Year))</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>top_movies <span class="ot">&lt;-</span> top_movies <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Year =</span> <span class="fu">as.numeric</span>(Year))</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>movies_top2 <span class="ot">&lt;-</span> movies <span class="sc">%&gt;%</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(top_movies, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Title"</span>, <span class="st">"Year"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Rating))</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  movies_top2,</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Turkish Movies in the Top 1000 Full Table"</span>,</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Title"</span>, <span class="st">"Year"</span>, <span class="st">"Duration"</span>, <span class="st">"Rating"</span>, <span class="st">"Votes"</span>)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Turkish Movies in the Top 1000 Full Table</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Title</th>
+<th style="text-align: right;">Year</th>
+<th style="text-align: right;">Duration</th>
+<th style="text-align: right;">Rating</th>
+<th style="text-align: right;">Votes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ayla: The Daughter of War</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">125</td>
+<td style="text-align: right;">8.3</td>
+<td style="text-align: right;">42992</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yedinci Kogustaki Mucize</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">132</td>
+<td style="text-align: right;">8.2</td>
+<td style="text-align: right;">54171</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Babam ve Oglum</td>
+<td style="text-align: right;">2005</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">8.2</td>
+<td style="text-align: right;">91035</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Eskiya</td>
+<td style="text-align: right;">1996</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">8.1</td>
+<td style="text-align: right;">71704</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Her Sey Çok Güzel Olacak</td>
+<td style="text-align: right;">1998</td>
+<td style="text-align: right;">107</td>
+<td style="text-align: right;">8.1</td>
+<td style="text-align: right;">27122</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kis Uykusu</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">196</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">54646</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ahlat Agaci</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">188</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">27015</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nefes: Vatan Sagolsun</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">35022</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G.O.R.A.</td>
+<td style="text-align: right;">2004</td>
+<td style="text-align: right;">127</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">66033</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Vizontele</td>
+<td style="text-align: right;">2001</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">38403</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bir Zamanlar Anadolu’da</td>
+<td style="text-align: right;">2011</td>
+<td style="text-align: right;">157</td>
+<td style="text-align: right;">7.8</td>
+<td style="text-align: right;">49365</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>movie_data1 <span class="ot">&lt;-</span> <span class="fu">arrange</span>(movie_data1, <span class="fu">desc</span>(Rating))</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(movie_data1, <span class="dv">11</span>),</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Turkish Movies in the Top 11"</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Title"</span>, <span class="st">"Year"</span>, <span class="st">"Duration"</span>, <span class="st">"Rating"</span>, <span class="st">"Votes"</span>)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Turkish Movies in the Top 11</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Year</th>
+<th style="text-align: right;">Duration</th>
+<th style="text-align: right;">Rating</th>
+<th style="text-align: right;">Votes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Hababam Sinifi</td>
+<td style="text-align: left;">1975</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">9.2</td>
+<td style="text-align: right;">42512</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CM101MMXI Fundamentals</td>
+<td style="text-align: left;">2013</td>
+<td style="text-align: right;">139</td>
+<td style="text-align: right;">9.1</td>
+<td style="text-align: right;">46996</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tosun Pasa</td>
+<td style="text-align: left;">1976</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: right;">24329</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hababam Sinifi Sinifta Kaldi</td>
+<td style="text-align: left;">1975</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: right;">24369</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Süt Kardesler</td>
+<td style="text-align: left;">1976</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: right;">20889</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Saban Oglu Saban</td>
+<td style="text-align: left;">1977</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: right;">18534</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Zügürt Aga</td>
+<td style="text-align: left;">1985</td>
+<td style="text-align: right;">101</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: right;">16135</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Neseli Günler</td>
+<td style="text-align: left;">1978</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: right;">11807</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kibar Feyzo</td>
+<td style="text-align: left;">1978</td>
+<td style="text-align: right;">83</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: right;">17126</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hababam Sinifi Uyaniyor</td>
+<td style="text-align: left;">1976</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: right;">20640</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Canim Kardesim</td>
+<td style="text-align: left;">1973</td>
+<td style="text-align: right;">85</td>
+<td style="text-align: right;">8.6</td>
+<td style="text-align: right;">10097</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 </section>

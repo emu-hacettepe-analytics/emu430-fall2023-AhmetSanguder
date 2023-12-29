@@ -4,13 +4,13 @@ title: "Assignment 2"
 
 # Assignment 2
 
-## (a)
+## (1)
 
 ```{r}
 url <- c("https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&sort=user_rating,desc&num_votes=2500,&country_of_origin=TR&count=250","https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&sort=user_rating,desc&num_votes=2500,&country_of_origin=TR&count=250")
 ```
 
-## (b)
+## (2)
 
 ```{r}
 library(tidyverse)
@@ -100,8 +100,134 @@ movie_data <- data.frame(
 )
 ```
 
+## (3)
+
+## (a)
+
+```{r}
+movies <- movie_data %>% 
+  arrange(desc(Rating))
+```
+
+```{r}
+kable(
+  movies %>%
+    head(5),
+  caption = "Top 5 Movies",
+  col.names = c("Title", "Year", "Duration", "Rating", "Votes")
+)
+```
+
+```{r}
+kable(
+  movies %>%
+    tail(5),
+  caption = "Bottom 5 Movies",
+  col.names = c("Title", "Year", "Duration", "Rating", "Votes")
+)
+```
+
+## (b)
+
+```{r}
+kable(
+  movie_data %>%
+    filter(Title == "Ölümlü Dünya" | Title == "Yedinci Kogustaki Mucize" | Title == "Dag II"),
+  caption = "My Best Three",
+  col.names = c("Title", "Year", "Duration", "Rating", "Votes")
+)
+```
+
 ## (c)
 
 ```{r}
+movie_data %>% 
+  group_by(Year) %>%
+  summarize(yearly_average = mean(Rating)) %>%
+  ggplot(aes(x = Year, y = yearly_average)) + geom_point() +
+  ggtitle("Yearly Rating Averages")
+```
 
+```{r}
+ggplot(movie_data, aes(x = factor(Year))) +
+  geom_bar(fill = "blue", color = "black") +
+  labs(x = "Year", y = "Number of Movies") +
+  ggtitle("Number of Movies Over the Years") +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90)
+  )
+```
+
+```{r}
+movie_data$Year <- as.factor(movie_data$Year)
+ggplot(movie_data, aes(x = Year, y = Rating, fill = factor(Year))) +
+  geom_boxplot(color = "black",width = 0.5) +
+  labs(x = "Year", y = "Rating") +
+  ggtitle("Box Plots of Movie Ratings Over the Years") +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90)
+  )
+```
+
+## (d)
+
+```{r}
+corr <- cor(movie_data$Votes, movie_data$Rating)
+cat("Correlation between Votes and Ratings:", corr)
+```
+
+## (e)
+
+```{r}
+corr <- cor(movie_data$Duration, movie_data$Rating)
+cat("Correlation between Votes and Ratings:", corr)
+```
+
+## (4)
+
+```{r}
+movie_data1 = movie_data
+url <- c("https://m.imdb.com/search/title/?title_type=feature&sort=release_date,asc&num_votes=2500,&groups=top_1000&country_of_origin=TR&count=250")
+data_html <- read_html(url)
+title_names <- data_html |> html_nodes('.ipc-title__text')
+title_names <- html_text(title_names)
+title_names <- tail(head(title_names,-1),-1)
+title_names <- str_split(title_names, " ", n=2)
+title_names <- unlist(lapply(title_names, function(x) {x[2]}))
+
+year <- data_html |> html_nodes(".dli-title-metadata-item:nth-child(1)")
+year <- as.numeric(html_text(year))
+
+top_movies <- data.frame(
+  Title = title_names,
+  Year = year
+  )
+kable (
+  top_movies,
+  caption = "Turkish Movies in the Top 1000",
+)
+```
+
+```{r}
+movie_data <- movie_data %>% mutate(Year = as.numeric(Year))
+top_movies <- top_movies %>% mutate(Year = as.numeric(Year))
+
+movies_top2 <- movies %>%
+  inner_join(top_movies, by = c("Title", "Year")) %>%
+  arrange(desc(Rating))
+kable(
+  movies_top2,
+  caption = "Turkish Movies in the Top 1000 Full Table",
+  col.names = c("Title", "Year", "Duration", "Rating", "Votes")
+)
+```
+
+```{r}
+movie_data1 <- arrange(movie_data1, desc(Rating))
+
+kable(
+  head(movie_data1, 11),
+  caption = "Turkish Movies in the Top 11",
+  col.names = c("Title", "Year", "Duration", "Rating", "Votes")
+)
 ```
