@@ -34,7 +34,7 @@ convert_time <- function(time_str) {
   total_minutes <- hours * 60 + minutes
   return(total_minutes)
 }
-#PART URL1
+
 
 data_html <- read_html(url[1])
 title_names_1 <- data_html |> html_nodes('.ipc-title__text')
