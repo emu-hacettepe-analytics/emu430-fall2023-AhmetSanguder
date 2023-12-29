@@ -537,6 +537,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="assignment-2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>As you can see, the ratings of movies are decreasing over the years. Of course, it is a very difficult subject, but in short, my opinion may be that as the years go by, revenue will be prioritized rather than quality.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(movie_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(Year))) <span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"blue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
@@ -549,6 +550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="assignment-2_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Similar to my previous comment, the reason for the increase in the number of films over the years may be the fact that many short-lived films are made for the sake of revenue.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>movie_data<span class="sc">$</span>Year <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(movie_data<span class="sc">$</span>Year)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(movie_data, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Rating, <span class="at">fill =</span> <span class="fu">factor</span>(Year))) <span class="sc">+</span></span>

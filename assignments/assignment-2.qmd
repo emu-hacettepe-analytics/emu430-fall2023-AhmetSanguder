@@ -153,6 +153,8 @@ movie_data %>%
   ggtitle("Yearly Rating Averages")
 ```
 
+As you can see, the ratings of movies are decreasing over the years. Of course, it is a very difficult subject, but in short, my opinion may be that as the years go by, revenue will be prioritized rather than quality.
+
 ```{r}
 ggplot(movie_data, aes(x = factor(Year))) +
   geom_bar(fill = "blue", color = "black") +
@@ -163,15 +165,25 @@ ggplot(movie_data, aes(x = factor(Year))) +
   )
 ```
 
+Similar to my previous comment, the reason for the increase in the number of films over the years may be the fact that many short-lived films are made for the sake of revenue.
+
 ```{r}
 movie_data$Year <- as.factor(movie_data$Year)
 ggplot(movie_data, aes(x = Year, y = Rating, fill = factor(Year))) +
-  geom_boxplot(width = 0.5) +
+  geom_boxplot(color = "black",width = 0.5) +
   labs(x = "Year", y = "Rating") +
   ggtitle("Box Plots of Movie Ratings Over the Years") +
   theme(legend.position = "none",
         axis.text.x = element_text(angle = 90)
   )
+```
+
+```{r}
+
+```
+
+```{r}
+
 ```
 
 ## (d)
