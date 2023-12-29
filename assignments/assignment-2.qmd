@@ -14,7 +14,6 @@ url <- c("https://m.imdb.com/search/title/?title_type=feature&release_date=2010-
 
 ```{r}
 
-library(colorspace)
 library(tidyverse)
 library(rvest)
 library(stringr)
